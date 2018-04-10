@@ -1,0 +1,17 @@
+<%= form_for(@note, :html => { :multipart => true }) do |f| %>
+   <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text, id: :tweet_text, :cols => "50", :rows => "10" %>
+  </div>
+
+   <%= f.fields_for :note_attachments do |p| %>
+     <div class="field">
+       
+       <%= p.file_field :avatar, :multiple => true, name: "note_attachments[avatar][]" %>
+     </div>
+   <% end %>
+
+   <div class="actions">
+     <%= f.submit %>
+   </div>
+<% end %>

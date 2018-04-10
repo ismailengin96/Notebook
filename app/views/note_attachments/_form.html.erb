@@ -1,0 +1,10 @@
+<%= image_tag @note_attachment.avatar, :size => "300x250" %>
+<%= form_for(@note_attachment) do |f| %>
+  <div class="field">
+   
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

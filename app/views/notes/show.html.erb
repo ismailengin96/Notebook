@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @note.text %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @note.user.name %>
+</p>
+
+<% @note_attachments.each do |p| %>
+  <%= image_tag p.avatar_url, :size => "300x250"%>
+  <%= link_to "Edit Attachment", edit_note_attachment_path(p) %>
+  <br>
+<% end %>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
